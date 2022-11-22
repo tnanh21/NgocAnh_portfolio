@@ -1,7 +1,6 @@
-﻿USE NgocAnh_Portfolio
-GO
 
 -- Business results by month and by year
+
 SELECT
 	YEAR(o.[order_date]) AS [Year]
 	,MONTH(o.[order_date]) AS [Month]
@@ -15,7 +14,9 @@ GROUP BY
 	,MONTH(o.[order_date])
 ORDER BY [Year], [Month]
 
+
 -- Show orders with a total net value greater than 20000 on the sales.order_items table
+
 SELECT 
 	[order_id]
     ,SUM([quantity] * [list_price] * (1 - [discount])) AS [total_net_value]
@@ -26,6 +27,7 @@ ORDER BY [total_net_value]
 
 
 -- List of 3 months with the highest total order value by store and year
+
 WITH get_data
 AS
 (
@@ -67,7 +69,9 @@ SELECT
 FROM Top3_HighestRevenue_Store_Year
 WHERE [ranking] <= 3
 
+
 -- Business results of each store compared to the same period last year
+
 WITH get_data
 AS
 (
