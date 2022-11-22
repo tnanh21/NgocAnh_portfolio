@@ -1,5 +1,5 @@
 
--- Business results by month and by year
+-- Show the sales and revenue by month and by year
 
 SELECT
 	YEAR(o.[order_date]) AS [Year]
